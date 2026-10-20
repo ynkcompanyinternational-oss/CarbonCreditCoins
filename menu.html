@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505">
+<title>Carbon Credit Coins | Institucional</title>
+
+<style>
+:root{
+  --gold:#b88a46;
+  --gold-light:#eacb87;
+  --gold-deep:#6b461e;
+  --gold-metal:linear-gradient(90deg,#6b461e,#b88a46,#eacb87,#b88a46,#6b461e);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{min-height:100%}
+body{
+  margin:0;
+  min-height:100vh;
+  background:#030303 url("assets/lamina.jpg") center center / cover fixed no-repeat;
+  color:#e8d8b7;
+  font-family:Georgia,"Times New Roman",serif;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.58);
+  pointer-events:none;
+}
+a{color:inherit;text-decoration:none}
+.shell{
+  position:relative;
+  z-index:1;
+  max-width:920px;
+  min-height:100vh;
+  margin:auto;
+  padding:28px 22px 65px;
+}
+.topbar{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px;
+}
+.ynk-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:8px 10px;
+  border:1px solid rgba(184,138,70,.28);
+  background:rgba(0,0,0,.52);
+  border-radius:10px;
+  box-shadow:0 4px 18px rgba(0,0,0,.25);
+}
+.ynk-link img{
+  height:26px;
+  width:auto;
+  display:block;
+}
+.ynk-fallback{
+  display:none;
+  font:12px Arial,sans-serif;
+  letter-spacing:2px;
+  background:var(--gold-metal);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+.ccc-back-bars{
+  width:40px;
+  height:34px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  background:transparent;
+}
+.ccc-back-bars span{
+  display:block;
+  width:21px;
+  height:3px;
+  background:#050505;
+  border:1px solid var(--gold);
+  border-radius:5px;
+}
+.header{
+  text-align:center;
+  margin:8px 0 30px;
+}
+.header h1{
+  font-size:clamp(24px,4vw,36px);
+  font-weight:normal;
+  letter-spacing:3px;
+  margin:10px 0 12px;
+  background:var(--gold-metal);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+.subtitle{
+  font:11px Arial,sans-serif;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  background:var(--gold-metal);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+.nav{
+  width:min(100%,580px);
+  margin:0 auto;
+  display:grid;
+  gap:10px;
+}
+.nav button{
+  padding:17px 16px;
+  background:rgba(0,0,0,.78);
+  border:1px solid rgba(184,138,70,.35);
+  cursor:pointer;
+  transition:.18s ease;
+}
+.nav button:hover,
+.nav button:focus-visible{
+  border-color:rgba(234,203,135,.65);
+  background:rgba(8,8,8,.92);
+}
+.nav span{
+  font:13px Arial,sans-serif;
+  letter-spacing:1px;
+  background:var(--gold-metal);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+.detail{
+  max-width:700px;
+  margin:30px auto 0;
+  text-align:left;
+}
+.back{
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  padding:0;
+  margin:0 0 22px;
+}
+.back img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+  display:block;
+}
+#heading{
+  margin:0 0 16px;
+  font-size:clamp(23px,4vw,34px);
+  font-weight:normal;
+  letter-spacing:1px;
+  background:var(--gold-metal);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+#description{
+  white-space:pre-line;
+  line-height:1.95;
+  font-size:15px;
+  color:#dfccb0;
+  padding-left:18px;
+  border-left:1px solid rgba(184,138,70,.45);
+}
+.footer-eth{
+  max-width:580px;
+  margin:26px auto 0;
+  padding:18px 16px;
+  border:1px solid rgba(184,138,70,.30);
+  background:rgba(0,0,0,.72);
+}
+.footer-eth-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.eth-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.eth-mark{
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(180deg,#111 0%,#070707 100%);
+  border:1px solid rgba(184,138,70,.25);
+}
+.eth-word{
+  font-family:"Avenir Next","Helvetica Neue","Segoe UI",Arial,sans-serif;
+  font-size:13px;
+  letter-spacing:.22em;
+  font-weight:300;
+  text-transform:uppercase;
+  display:inline-flex;
+  gap:1px;
+}
+.eth-word .letter{
+  display:inline-block;
+  background:linear-gradient(
+    180deg,
+    #f0f3f6 0%,
+    #cfd6dd 20%,
+    #87909a 38%,
+    #edf1f5 54%,
+    #6c737b 73%,
+    #dce2e8 88%,
+    #707882 100%
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.08),
+    0 1px 3px rgba(0,0,0,.22);
+}
+.eth-sub{
+  font:10px Arial,sans-serif;
+  letter-spacing:1.7px;
+  text-transform:uppercase;
+  margin-top:4px;
+  color:#b7a07c;
+}
+.eth-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:11px 14px;
+  border:1px solid rgba(184,138,70,.42);
+  background:linear-gradient(180deg,#121212 0%, #060606 100%);
+  font:11px Arial,sans-serif;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:var(--gold-light);
+}
+.eth-link:hover{
+  border-color:rgba(234,203,135,.75);
+}
+.global-button{
+  padding:15px 16px !important;
+}
+.global-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  width:100%;
+}
+.global-globe{
+  width:48px;
+  height:48px;
+  min-width:48px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255,255,255,.10), transparent 30%),
+    radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 68%, #000 100%);
+  border:1px solid rgba(234,203,135,.76);
+  box-shadow:
+    0 0 0 1px rgba(107,70,30,.35),
+    inset 0 0 10px rgba(0,0,0,.88),
+    0 0 16px rgba(184,138,70,.14);
+}
+.global-globe svg{
+  width:29px;
+  height:29px;
+  display:block;
+}
+.global-text{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  text-align:left;
+}
+.global-title{
+  font:13px Arial,sans-serif;
+  letter-spacing:1.4px;
+  background:var(--gold-metal);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+.global-sub{
+  margin-top:4px;
+  font:10px Arial,sans-serif;
+  letter-spacing:1.7px;
+  opacity:.78;
+  background:var(--gold-metal);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+@media(max-width:700px){
+  body{background-attachment:scroll}
+  .shell{padding:22px 16px 45px}
+  .header{margin-bottom:24px}
+  .nav{gap:9px}
+  .nav button{padding:15px 14px}
+  .global-globe{
+    width:44px;
+    height:44px;
+    min-width:44px;
+  }
+  .global-globe svg{
+    width:26px;
+    height:26px;
+  }
+  .footer-eth-wrap{
+    align-items:flex-start;
+  }
+}
+</style>
+
+<style id="ccc-menu-refinamento">
+.global-globe {
+  display:none!important;
+}
+.global-wrap {
+  justify-content:center;
+}
+.global-text {
+  align-items:center;
+  text-align:center;
+}
+#menu .footer-eth {
+  display:none!important;
+}
+.nav button.eth-menu-button span {
+  font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif;
+  font-size:14px;
+  font-weight:300;
+  letter-spacing:.22em;
+}
+</style>
+
+<style id="ccc-ethereum-chrome-fix">
+.nav button.eth-menu-button .eth-chrome-wrap {
+  display:inline-flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  width:100% !important;
+  background:none !important;
+  filter:none !important;
+  text-shadow:none !important;
+}
+
+.nav button.eth-menu-button .eth-chrome-word {
+  display:inline-block !important;
+  font-family:"Helvetica Neue","Segoe UI",Arial,sans-serif !important;
+  font-size:16px !important;
+  font-weight:600 !important;
+  letter-spacing:.09em !important;
+  line-height:1.3 !important;
+  text-transform:none !important;
+  white-space:nowrap !important;
+
+  background:linear-gradient(
+    180deg,
+    #88939d 0%,
+    #d8e0e6 20%,
+    #f3f5f7 34%,
+    #98a5ae 47%,
+    #64727d 55%,
+    #c6d0d8 73%,
+    #e4e9ed 100%
+  ) !important;
+
+  -webkit-background-clip:text !important;
+  background-clip:text !important;
+  color:#cbd3db !important;
+  -webkit-text-fill-color:transparent !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:none !important;
+  filter:none !important;
+}
+</style>
+
+</head>
+<body>
+
+<div class="shell">
+
+  <div class="topbar">
+    <a class="ynk-link" href="https://ynk.exchange" target="_blank" rel="noopener" aria-label="Abrir site da YNK & Co.">
+      <img src="assets/ynk-logo.png" alt="YNK & Co."
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+      <span class="ynk-fallback">YNK &amp; CO.</span>
+    </a>
+
+    <a class="ccc-back-bars" href="index.html" aria-label="Voltar para a capa">
+      <span></span><span></span><span></span>
+    </a>
+  </div>
+
+  <div class="header">
+    <h1>CARBON CREDIT COINS</h1>
+    <div class="subtitle">YNK &amp; CO. · SUSTAINABILITY · CAPITAL</div>
+  </div>
+
+  <div id="menu">
+    <nav class="nav" id="navigation"></nav>
+
+    <div class="footer-eth">
+      <div class="footer-eth-wrap">
+        <div class="eth-left">
+          <div class="eth-mark" aria-hidden="true">
+            <svg viewBox="0 0 256 417" width="24" height="24">
+              <path fill="#cfd5dc" d="M127.9 0L125 9.8v272.7l2.9 2.9 126.7-74.9z"/>
+              <path fill="#9aa3ad" d="M127.9 0L1.2 210.5l126.7 74.9V153.1z"/>
+              <path fill="#dfe5eb" d="M127.9 309.3l-1.6 2v97.1l1.6 4.6L254.7 234z"/>
+              <path fill="#aeb7c0" d="M127.9 413V309.3L1.2 234z"/>
+              <path fill="#bfc7cf" d="M127.9 285.4l126.7-74.9-126.7-57.4z"/>
+              <path fill="#8f98a3" d="M1.2 210.5l126.7 74.9V153.1z"/>
+            </svg>
+          </div>
+
+          <div>
+            <div class="eth-word" aria-label="Ethereum">
+              <span class="letter">E</span>
+              <span class="letter">T</span>
+              <span class="letter">H</span>
+              <span class="letter">E</span>
+              <span class="letter">R</span>
+              <span class="letter">E</span>
+              <span class="letter">U</span>
+              <span class="letter">M</span>
+            </div>
+            <div class="eth-sub">CCC contract · ethereum network</div>
+          </div>
+        </div>
+
+        <a class="eth-link"
+           href="https://etherscan.io/token/0x9640Bb4eb644d05Ed5E928504cb69D00823BF7c5"
+           target="_blank" rel="noopener">
+          Ver no Etherscan
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="detail" class="detail" hidden>
+    <button class="back" id="return" aria-label="Voltar ao menu">
+      <img src="assets/logo.png" alt="CCC">
+    </button>
+    <h2 id="heading"></h2>
+    <p id="description"></p>
+  </div>
+
+</div>
+
+<script id="ccc-scroll-start">
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+window.addEventListener("pageshow", () => {
+  if (!location.hash) {
+    requestAnimationFrame(() => window.scrollTo(0, 0));
+  }
+});
+</script>
+
+<script>
+const sections = [
+  ["POR QUE A CCC?", `UM COMPROMISSO COM O FUTURO DA HUMANIDADE
+
+Uma nova era para o capital, a sustentabilidade e a responsabilidade global.
+
+Há momentos na história em que a humanidade é chamada a tomar decisões que ultrapassam os interesses de uma geração, os limites de uma economia e as fronteiras de uma nação.
+
+Estamos diante de um desses momentos.
+
+O desenvolvimento econômico, o avanço tecnológico e a preservação ambiental já não podem ser tratados como caminhos independentes.
+
+A Carbon Credit Coins nasce com a proposta de unir tecnologia, capital e responsabilidade ambiental em uma visão institucional de longo prazo.
+
+Preservar o planeta não é apenas uma responsabilidade ambiental. É uma decisão econômica, estratégica e civilizatória.
+
+A CCC representa uma visão de futuro baseada em transparência, rastreabilidade e responsabilidade.`],
+
+  ["MERCADO DE CARBONO", `O projeto busca contribuir para a rastreabilidade dos créditos de carbono, para a integridade das negociações e para a redução de riscos de duplicidade no mercado de ativos ambientais.
+
+A proposta é desenvolver uma estrutura com maior previsibilidade, transparência e credibilidade institucional.`],
+
+  ["SUSTENTABILIDADE", `Investimento responsável, proteção ambiental e integridade dos ativos verdes são princípios centrais da Carbon Credit Coins.
+
+A sustentabilidade é tratada como valor estratégico e como compromisso com as próximas gerações.`],
+
+  ["GOVERNANÇA", `O projeto informa uma estrutura de governança com oito diretores e uma organização voltada à responsabilidade institucional, ambiental e social.
+
+A Fundação Carbon Credit Coins está em fase de estruturação e desenvolvimento documental.`],
+
+  ["Ethereum", `A CCC está vinculada à rede Ethereum e sua área de carteira pode ser acompanhada na página específica do projeto.`],
+
+  ["CAPITAL TRADE", `CAPITAL TRADE S.A.
+SOLUÇÕES SEM FRONTEIRAS
+
+PRESENÇA GLOBAL • AUDITORIA • TRANSPARÊNCIA
+
+A Capital Trade S.A. apresenta-se como uma empresa de atuação global, com presença institucional nos Estados Unidos, Paraguai e Brasil, dedicada ao mercado internacional de criptomoedas e ativos digitais.
+
+AUDITORIA DAS TRANSAÇÕES — CARBON CREDIT COIN (CCC)
+
+No ecossistema da Carbon Credit Coin (CCC), a Capital Trade é apresentada como responsável pela auditoria de todas as transações realizadas com o ativo digital.
+
+Sua atuação contempla a supervisão dos registros transacionais, a verificação da integridade das operações e o acompanhamento da rastreabilidade dos ativos.
+
+TECNOLOGIA E GOVERNANÇA
+
+Com foco em transparência, segurança operacional e responsabilidade institucional, a Capital Trade integra análise técnica e supervisão humana aos processos de acompanhamento das operações blockchain.
+
+Sua atuação busca fortalecer a credibilidade da Carbon Credit Coin perante o mercado internacional de ativos digitais.
+
+CAPITAL TRADE S.A.
+Global Presence • Digital Asset Oversight • Trust & Transparency.`],
+
+  ["RESERVAS E TRANSPARÊNCIA", `O projeto informa possuir créditos de carbono verificados e ativos sob custódia.
+
+Documentação pública, critérios de auditoria e elementos adicionais de transparência poderão ser integrados posteriormente.`],
+
+  ["CONTATO", `carboncreditcoins.com.br
+cc@carboncreditcoins.com.br
+
+Projeto da YNK & Co.
+ynk.exchange`]
+];
+
+const menu = document.getElementById("menu");
+const detail = document.getElementById("detail");
+const navigation = document.getElementById("navigation");
+const heading = document.getElementById("heading");
+const description = document.getElementById("description");
+
+function openDetail(title, text) {
+  heading.textContent = title;
+  heading.hidden = (title === "POR QUE A CCC?");
+  description.textContent = text;
+
+  const oldPanel = detail.querySelector("#ccc-financial-panel");
+  if (oldPanel) oldPanel.remove();
+
+  if (title === "Ethereum") {
+    const panel = document.createElement("section");
+    panel.id = "ccc-financial-panel";
+    panel.style.cssText = "background:#080808;color:#d8b66a;border:1px solid #9d7b37;border-radius:16px;padding:20px;margin:20px auto;max-width:900px";
+
+    panel.innerHTML = `
+      <h2 style="text-align:center;color:#e2c17b">CCC | DIGITAL ASSETS</h2>
+      <p style="text-align:center;color:#aaa">Ethereum · Monitoramento blockchain</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:20px">
+        <div class="ccc-card"><strong>CCC emitidos</strong><p id="ccc-supply">Consultando blockchain...</p></div>
+        <div class="ccc-card"><strong>Saldo da carteira</strong><p id="ccc-balance">Não conectado</p></div>
+        <div class="ccc-card"><strong>Valor de referência CCC</strong><p id="ccc-value">Não disponível</p></div>
+        <div class="ccc-card"><strong>Transações</strong><p id="ccc-transactions">Aguardando consulta</p></div>
+      </div>
+      <div style="text-align:center;margin:22px 0">
+        <div style="color:#c9a45b;font-size:14px;line-height:1.8">
+          <strong>CONTRATO CCC · ERC-20</strong>
+          <div style="overflow-wrap:anywhere;margin-top:8px">
+            0x9640Bb4eb644d05Ed5E928504cb69D00823BF7c5
+          </div>
+        </div>
+      </div>
+      <h3 style="margin-top:28px">Gráficos e histórico</h3>
+      <div id="ccc-line-chart" style="background:#10151e;border:1px solid #66532d;border-radius:14px;padding:16px;margin:14px 0 22px">
+        <strong style="color:#d8b66a">CCC · Volume de transferências</strong>
+        <p style="color:#aaa;font-size:12px">Histórico real · Ethereum</p>
+        <div id="ccc-line-content">Carregando gráfico...</div>
+      </div>
+
+      
+    `;
+
+    panel.querySelectorAll(".ccc-card").forEach(card => {
+      card.style.cssText = "background:#151515;border:1px solid #65512b;border-radius:12px;padding:15px;text-align:center";
+    });
+
+    description.parentNode.insertBefore(panel, description.nextSibling);
+    const supplyStatus = panel.querySelector("#ccc-supply");
+    supplyStatus.id = "ccc-live-supply";
+
+    fetch("https://ethereum.publicnode.com", {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({
+        jsonrpc:"2.0",
+        id:1,
+        method:"eth_call",
+        params:[{
+          to:"0x9640Bb4eb644d05Ed5E928504cb69D00823BF7c5",
+          data:"0x18160ddd"
+        },"latest"]
+      })
+    })
+    .then(r => {
+      if (!r.ok) throw new Error("RPC indisponivel");
+      return r.json();
+    })
+    .then(d => {
+      if (!d.result || d.result === "0x") throw new Error("Resposta invalida");
+      const total = BigInt(d.result) / (10n ** 18n);
+      supplyStatus.textContent = total.toLocaleString("pt-BR") + " CCC";
+    })
+    .catch(() => {
+      supplyStatus.textContent = "Consulta indisponível";
+    });
+
+
+    fetch("data/ccc-wallet-summary.json?refresh=" + Date.now())
+      .then(r => {
+        if (!r.ok) throw new Error("Saldo indisponivel");
+        return r.json();
+      })
+      .then(data => {
+        const balance = Number(data.balance_ccc);
+        if (!Number.isFinite(balance)) throw new Error("Saldo invalido");
+
+        const fmt = n => n.toLocaleString("pt-BR", {
+          maximumFractionDigits: 6
+        });
+
+        panel.querySelector("#ccc-balance").textContent =
+          fmt(balance) + " CCC";
+
+        panel.querySelector("#ccc-value").textContent =
+          "US$ " + fmt(balance) + " · " +
+          fmt(balance * 164 / 1000) + " t CO₂e (referência do projeto)";
+      })
+      .catch(() => {
+        panel.querySelector("#ccc-balance").textContent =
+          "Consulta indisponível";
+        panel.querySelector("#ccc-value").textContent =
+          "Referência indisponível";
+      });
+
+    if (title === "Ethereum") {
+      const chart = document.createElement("div");
+      chart.id = "ccc-history-chart";
+      chart.style.cssText = "margin-top:18px;color:#d8b66a";
+      chart.textContent = "Carregando transferências CCC...";
+
+      panel.appendChild(chart);
+
+
+      fetch("data/ccc-transfers.json?refresh=" + Date.now())
+        .then(r => {
+          if (!r.ok) throw new Error("Dados indisponíveis");
+          return r.json();
+        })
+        .then(data => {
+          const host = panel.querySelector("#ccc-line-content");
+          const txs = (data.transfers || []).slice()
+            .sort((a,b) => Number(a.timestamp)-Number(b.timestamp));
+          if (!txs.length) {
+            host.textContent = "Sem transferências.";
+            return;
+          }
+
+          const ns = "http://www.w3.org/2000/svg";
+          const svg = document.createElementNS(ns, "svg");
+          svg.setAttribute("viewBox", "0 0 600 260");
+          svg.setAttribute("role", "img");
+          svg.setAttribute("aria-label", "Volume de transferências CCC ao longo do tempo");
+          svg.style.cssText = "width:100%;height:auto;display:block";
+
+          const make = (tag, attrs) => {
+            const el = document.createElementNS(ns, tag);
+            Object.entries(attrs).forEach(([k,v]) => el.setAttribute(k,String(v)));
+            svg.appendChild(el);
+            return el;
+          };
+
+          const values = txs.map(t => Number(t.amount_ccc));
+          const max = Math.max(...values, 1);
+          const minTime = Number(txs[0].timestamp);
+          const maxTime = Number(txs[txs.length-1].timestamp);
+          const points = txs.map((t,i) => {
+            const time = Number(t.timestamp);
+            const x = maxTime > minTime
+              ? 42 + (time-minTime)/(maxTime-minTime)*530
+              : 42 + i*530/Math.max(txs.length-1,1);
+            const y = 215 - Number(t.amount_ccc)/max*175;
+            return [x,y];
+          });
+
+          for (let i=0;i<=4;i++) {
+            const y=40+i*43.75;
+            make("line",{x1:42,y1:y,x2:572,y2:y,stroke:"#344052","stroke-dasharray":"4 5"});
+          }
+
+          const coords = points.map(p => p.join(",")).join(" ");
+          make("polygon",{
+            points:"42,215 "+coords+" 572,215",
+            fill:"#164c70","fill-opacity":"0.24"
+          });
+          make("polyline",{
+            points:coords,fill:"none",stroke:"#29b6f6",
+            "stroke-width":"4","stroke-linecap":"round",
+            "stroke-linejoin":"round"
+          });
+
+          points.forEach((pt,i) => {
+            const dot = make("circle",{
+              cx:pt[0],cy:pt[1],r:6,
+              fill:i===points.length-1?"#e6c57d":"#36d399",
+              stroke:"#10151e","stroke-width":2
+            });
+            const tip=document.createElementNS(ns,"title");
+            tip.textContent=new Date(Number(txs[i].timestamp)*1000)
+              .toLocaleDateString("pt-BR")+" · "+
+              values[i].toLocaleString("pt-BR")+" CCC";
+            dot.appendChild(tip);
+          });
+
+          host.replaceChildren(svg);
+          const legend=document.createElement("p");
+          legend.style.cssText="font-size:12px;color:#aab4c2;margin-top:8px";
+          legend.textContent="Azul: volume transferido · Verde/dourado: registros reais · Não representa preço";
+          host.appendChild(legend);
+        })
+        .catch(() => {
+          const host=panel.querySelector("#ccc-line-content");
+          if (host) host.textContent="Gráfico indisponível.";
+        });
+
+      fetch("data/ccc-transfers.json?refresh=" + Date.now())
+        .then(r => {
+          if (!r.ok) throw new Error("Arquivo indisponível");
+          return r.json();
+        })
+        .then(data => {
+          const records = [...(data.transfers || [])]
+            .sort((a,b) => Number(a.timestamp)-Number(b.timestamp));
+
+          const txCounter = panel.querySelector("#ccc-transactions");
+          if (txCounter) txCounter.textContent = records.length.toLocaleString("pt-BR") + " transferências consultadas";
+          chart.replaceChildren();
+
+          const heading = document.createElement("h3");
+          heading.textContent = "Movimentações CCC · Etherscan V2";
+          chart.appendChild(heading);
+
+          if (!records.length) {
+            chart.append("Nenhuma movimentação registrada.");
+            return;
+          }
+
+          const max = Math.max(...records.map(x => Number(x.amount_ccc)));
+
+          for (const tx of records) {
+            const amount = Number(tx.amount_ccc);
+            const date = new Date(Number(tx.timestamp)*1000)
+              .toLocaleDateString("pt-BR");
+
+            const label = document.createElement("p");
+            label.style.cssText = "margin:12px 0 4px;font-size:13px";
+            label.textContent = date+" · "+
+              amount.toLocaleString("pt-BR")+" CCC";
+
+            const track = document.createElement("div");
+            track.style.cssText =
+              "height:13px;background:#292929;border-radius:8px;overflow:hidden";
+
+            const bar = document.createElement("div");
+            bar.style.cssText =
+              "height:100%;background:linear-gradient(90deg,#806020,#e6c57d);border-radius:8px";
+            bar.style.width = (max ? amount/max*100 : 0)+"%";
+
+            track.appendChild(bar);
+            chart.append(label,track);
+          }
+
+          const note = document.createElement("p");
+          note.style.cssText = "font-size:12px;color:#999;margin-top:18px";
+          note.textContent =
+            "Fonte: Etherscan V2 · Última atualização: " + (data.updated_at || "não informada") + " · Histórico armazenado localmente.";
+          chart.appendChild(note);
+        })
+        .catch(() => {
+          chart.textContent = "Histórico indisponível no momento.";
+        });
+    }
+
+  }
+
+  const previousLogos = detail.querySelector(".capital-trade-logos");
+  if (previousLogos) previousLogos.remove();
+
+  if (title === "CAPITAL TRADE") {
+    const logos = document.createElement("div");
+    logos.className = "capital-trade-logos";
+    logos.style.cssText = "display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap;margin:20px auto 28px";
+
+    for (const [src, alt] of [
+      ["assets/logo.png", "Carbon Credit Coins"],
+      ["assets/capital-trade.png", "Capital Trade"]
+    ]) {
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = alt;
+      img.style.cssText = "width:140px;max-width:38vw;height:140px;object-fit:contain";
+      logos.appendChild(img);
+    }
+
+    description.parentNode.insertBefore(logos, description);
+  }
+
+  menu.hidden = true;
+  detail.hidden = false;
+  window.scrollTo(0, 0);
+}
+
+const globalMarketsButton = document.createElement("button");
+globalMarketsButton.type = "button";
+globalMarketsButton.className = "global-button";
+globalMarketsButton.setAttribute("aria-label", "Abrir mercados globais");
+
+globalMarketsButton.innerHTML = `
+  <span class="global-wrap">
+    <span class="global-globe" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="22"
+                stroke="url(#goldStroke)" stroke-width="2.2"/>
+        <path d="M10 32h44" stroke="url(#goldStroke)" stroke-width="1.7" opacity=".95"/>
+        <path d="M32 10c7 7 11 14 11 22s-4 15-11 22c-7-7-11-14-11-22s4-15 11-22z"
+              stroke="url(#goldStroke)" stroke-width="1.6" opacity=".95"/>
+        <path d="M17 21c4 2 9 3 15 3s11-1 15-3" stroke="url(#goldStroke)" stroke-width="1.4" opacity=".85"/>
+        <path d="M17 43c4-2 9-3 15-3s11 1 15 3" stroke="url(#goldStroke)" stroke-width="1.4" opacity=".85"/>
+        <defs>
+          <linearGradient id="goldStroke" x1="0" y1="0" x2="64" y2="64">
+            <stop offset="0%" stop-color="#6b461e"/>
+            <stop offset="40%" stop-color="#b88a46"/>
+            <stop offset="70%" stop-color="#eacb87"/>
+            <stop offset="100%" stop-color="#8b622c"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </span>
+    <span class="global-text">
+      <span class="global-title">GLOBAL MARKETS</span>
+      <span class="global-sub">FUSO HORÁRIO MUNDIAL</span>
+    </span>
+  </span>
+`;
+globalMarketsButton.addEventListener("click", () => {
+  window.location.href = "mercados.html";
+});
+navigation.appendChild(globalMarketsButton);
+
+sections.forEach(([title, text]) => {
+  const button = document.createElement("button");
+  button.type = "button";
+
+  const span = document.createElement("span");
+  span.textContent = title;
+
+  if (title === "Ethereum" || title === "CAPITAL TRADE") {
+    button.classList.add("eth-menu-button");
+    span.textContent = "";
+    span.className = "eth-chrome-wrap";
+
+    const word = document.createElement("span");
+    word.className = "eth-chrome-word";
+
+    word.textContent = title;
+
+    span.appendChild(word);
+  }
+  if (title === "Ethereum") button.classList.add("eth-menu-button");
+  button.appendChild(span);
+
+  button.addEventListener("click", () => {
+    
+    openDetail(title, text);
+  });
+
+  navigation.appendChild(button);
+});
+
+document.getElementById("return").onclick = () => {
+  detail.hidden = true;
+  menu.hidden = false;
+  window.scrollTo(0, 0);
+};
+</script>
+
+</body>
+</html>

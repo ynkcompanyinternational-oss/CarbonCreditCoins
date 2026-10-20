@@ -1,0 +1,49 @@
+{
+  "token": "CCC",
+  "network": "Ethereum",
+  "contract": "0x9640Bb4eb644d05Ed5E928504cb69D00823BF7c5",
+  "source": "Etherscan V2",
+  "updated_at": "2026-10-20T07:09:03.269811+00:00",
+  "transfers": [
+    {
+      "hash": "0x899b29589d61a42643053625a93912a393953800e709d6bcf15fc7704a6de030",
+      "from": "0x16f43e9d671077540b84725680544a2a5a0da3dd",
+      "to": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "amount_ccc": "598999000.0",
+      "timestamp": 1792191719,
+      "block": 26208257
+    },
+    {
+      "hash": "0xa163aad33c63021922b3ecfde24d48f082ec2eda79bcd0510eb5adea3c4567b5",
+      "from": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "to": "0x16f43e9d671077540b84725680544a2a5a0da3dd",
+      "amount_ccc": "598999000.0",
+      "timestamp": 1791744695,
+      "block": 26171120
+    },
+    {
+      "hash": "0x55500b63ea2cd10d3b6be857dfdba982ba44b96cc8e09904da745d053433aa38",
+      "from": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "to": "0x4090688d8e59ab2eb7b0662f554d054827b7e2ba",
+      "amount_ccc": "1000000.0",
+      "timestamp": 1791231779,
+      "block": 26128532
+    },
+    {
+      "hash": "0x4a0148cb0498ad8f3a50ee5f3de3cf2c54c0b7f4724cc5ad391d20683797e43e",
+      "from": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "to": "0xc490e2a76c25a9e1a655e2c61f9c728ef4816ea3",
+      "amount_ccc": "1000.0",
+      "timestamp": 1791228215,
+      "block": 26128236
+    },
+    {
+      "hash": "0x5e6cb1703f1a5d5e2a15df4ab4c4b95187dee9c380749542b467a95667457143",
+      "from": "0x0000000000000000000000000000000000000000",
+      "to": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "amount_ccc": "600000000.0",
+      "timestamp": 1791214283,
+      "block": 26127077
+    }
+  ]
+}

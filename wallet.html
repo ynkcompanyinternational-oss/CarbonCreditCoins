@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+<title>CCC | Minha Carteira</title>
+<style>
+:root{
+--gold:linear-gradient(90deg,
+#6b461e,#b88a46,#eacb87,#b88a46);
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+min-height:100vh;
+background:#030303 url("assets/lamina.jpg")
+center/cover no-repeat;
+font-family:Georgia,serif;
+color:#eacb87;
+}
+main{
+min-height:100vh;
+max-width:720px;
+margin:auto;
+padding:45px 24px;
+background:rgba(0,0,0,.72);
+text-align:center;
+}
+h1,h2,p,a,.gold{
+background:var(--gold);
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent;
+-webkit-text-fill-color:transparent;
+}
+h1{font-size:29px;font-weight:normal}
+h2{font-size:21px;font-weight:normal}
+p{line-height:1.8;overflow-wrap:anywhere}
+.logo{width:58px;height:58px;object-fit:contain}
+button{
+padding:15px 25px;
+border:1px solid #b88a46;
+background:#080808;
+color:#eacb87;
+cursor:pointer;
+font-size:13px;
+letter-spacing:1px;
+}
+.panel{
+border:1px solid #866131;
+padding:24px 15px;
+margin:28px 0;
+background:rgba(0,0,0,.85);
+}
+#status{font-size:14px}
+a{overflow-wrap:anywhere}
+</style>
+
+<style id="ccc-back-style">
+.ccc-back-bars {
+  position:fixed;
+  top:18px;
+  right:18px;
+  z-index:9999;
+  width:52px;
+  height:48px;
+  background:#050505;
+  border:1px solid #b88a46;
+  border-radius:7px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  text-decoration:none;
+  box-shadow:0 3px 14px #000;
+}
+.ccc-back-bars span {
+  width:25px;
+  height:5px;
+  background:#050505;
+  border:1px solid #b88a46;
+  border-radius:3px;
+}
+</style>
+
+<style id="ccc-delicate-bars">
+a.ccc-back-bars,
+a.back {
+  width:44px;
+  height:44px;
+  top:12px;
+  right:12px;
+  padding:0;
+  background:transparent;
+  border:none;
+  border-radius:0;
+  box-shadow:none;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+}
+
+a.ccc-back-bars span,
+a.back span {
+  display:block;
+  width:22px;
+  height:3px;
+  background:#050505;
+  border:1px solid #b88a46;
+  border-radius:4px;
+  box-shadow:none;
+}
+</style>
+
+
+<script id="ccc-scroll-start">
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+window.addEventListener("pageshow", () => {
+  if (!location.hash) {
+    requestAnimationFrame(() => window.scrollTo(0, 0));
+  }
+});
+</script>
+</head>
+<body>
+<main>
+<a href="menu.html">
+<img class="logo" src="assets/logo.png"
+alt="Voltar ao menu">
+</a>
+
+<h1>CARBON CREDIT COINS</h1>
+<p>CCC · ETHEREUM · YNK &amp; CO.</p>
+
+<section class="panel">
+<h2>Minha Carteira</h2>
+
+<button id="connect" type="button">
+CONECTAR CARTEIRA
+</button>
+
+<p id="status" role="status">
+Aguardando conexão
+</p>
+
+<p id="address"></p>
+<p id="balance"></p>
+</section>
+
+<section class="panel">
+<h2>Contrato CCC</h2>
+<p>Ethereum</p>
+<p>
+<a target="_blank" rel="noopener noreferrer"
+href="https://etherscan.io/address/0x9640Bb4eb644d05Ed5E928504cb69D00823BF7c5">
+CONSULTAR CONTRATO NO ETHERSCAN
+</a>
+</p>
+</section>
+</main>
+
+<script>
+const CONTRACT =
+"0x9640Bb4eb644d05Ed5E928504cb69D00823BF7c5";
+
+const statusEl=document.getElementById("status");
+const addressEl=document.getElementById("address");
+const balanceEl=document.getElementById("balance");
+
+function formatBalance(raw,decimals){
+ const scale=10n**BigInt(decimals);
+ const whole=(raw/scale).toString();
+ const fraction=(raw%scale).toString()
+ .padStart(decimals,"0")
+ .slice(0,6)
+ .replace(/0+$/,"");
+ return whole+(fraction?","+fraction:"");
+}
+
+async function connectWallet(){
+ const provider=window.ethereum;
+
+ if(!provider){
+  statusEl.textContent=
+  "Abra este site no navegador interno da sua carteira Ethereum.";
+  return;
+ }
+
+ try{
+  statusEl.textContent="Solicitando conexão...";
+  addressEl.textContent="";
+  balanceEl.textContent="";
+
+  const accounts=await provider.request({
+   method:"eth_requestAccounts"
+  });
+
+  if(!accounts.length){
+   throw new Error("Nenhuma conta selecionada.");
+  }
+
+  const account=accounts[0];
+  const chain=await provider.request({
+   method:"eth_chainId"
+  });
+
+  if(chain!=="0x1"){
+   statusEl.textContent=
+   "Selecione a rede Ethereum Mainnet na carteira.";
+   return;
+  }
+
+  addressEl.textContent="Carteira conectada com autorização";
+  statusEl.textContent="Carteira conectada · Ethereum";
+
+  const code=await provider.request({
+   method:"eth_getCode",
+   params:[CONTRACT,"latest"]
+  });
+
+  if(!code || code==="0x"){
+   balanceEl.textContent=
+   "Contrato ERC-20 não encontrado neste endereço.";
+   return;
+  }
+
+  const decimalsHex=await provider.request({
+   method:"eth_call",
+   params:[{
+    to:CONTRACT,
+    data:"0x313ce567"
+   },"latest"]
+  });
+
+  const decimals=Number(BigInt(decimalsHex));
+
+  if(decimals<0 || decimals>36){
+   throw new Error("Decimais do token inválidos.");
+  }
+
+  const data="0x70a08231"+
+   account.slice(2).toLowerCase().padStart(64,"0");
+
+  const result=await provider.request({
+   method:"eth_call",
+   params:[{
+    to:CONTRACT,
+    data:data
+   },"latest"]
+  });
+
+  const balance=BigInt(result);
+
+  balanceEl.textContent=
+   "Saldo CCC: "+formatBalance(balance,decimals);
+
+ }catch(err){
+  statusEl.textContent=
+   "Não foi possível concluir a consulta: "+
+   (err.message||"erro desconhecido");
+ }
+}
+
+document.getElementById("connect")
+.addEventListener("click",connectWallet);
+</script>
+<a class="ccc-back-bars" href="menu.html" aria-label="Voltar"><span></span><span></span><span></span></a>
+</body>
+</html>

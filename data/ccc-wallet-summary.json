@@ -1,0 +1,9 @@
+{
+  "network": "Ethereum Mainnet",
+  "token": "CCC",
+  "balance_ccc": "598999000",
+  "reference_usd": "598999000",
+  "carbon_equivalent_kg": "98235836000",
+  "source": "Etherscan V2",
+  "updated_at": "2026-10-20T07:12:56.031989+00:00"
+}
