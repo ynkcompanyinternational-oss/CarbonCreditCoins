@@ -1043,6 +1043,15 @@ sections.forEach(([title, text]) => {
   navigation.appendChild(button);
 });
 
+
+const whitepaperButton = document.createElement("button");
+whitepaperButton.type = "button";
+whitepaperButton.textContent = "WHITEPAPER 2026";
+whitepaperButton.addEventListener("click", () => {
+  window.location.href = "whitepaper.html";
+});
+navigation.appendChild(whitepaperButton);
+
 document.getElementById("return").onclick = () => {
   detail.hidden = true;
   menu.hidden = false;
