@@ -1,0 +1,78 @@
+{
+  "token": "CCC",
+  "network": "Ethereum",
+  "contract": "0x9640Bb4eb644d05Ed5E928504cb69D00823BF7c5",
+  "updated_at": "2026-11-15T17:55:49.209064+00:00",
+  "transfers": [
+    {
+      "hash": "0x1b5ea2837eca9445ca186f4dfd34a24d05fb70ed723a05be61a237780fe79aba",
+      "from": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "to": "0xc3e5ba9398f147c02bb24e4e7e650e2f8d8f7aad",
+      "amount_ccc": "4000000",
+      "timestamp": 1793913575
+    },
+    {
+      "hash": "0xc92ef56127b525d628e85a09f2d56aa814174bbdcc248d569176e274715460d2",
+      "from": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "to": "0x0051ef9259c7ec0644a80e866ab748a2f30841b3",
+      "amount_ccc": "538",
+      "timestamp": 1792978439
+    },
+    {
+      "hash": "0x3a213ac73360051fb4e8bd6712a67d49096ef61e255345d1127b3020dbc5894c",
+      "from": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "to": "0x28c6c06298d514db089934071355e5743bf21d60",
+      "amount_ccc": "1000",
+      "timestamp": 1792974623
+    },
+    {
+      "hash": "0xdd677c34b1fb7a9d7ec542c4bbc3c45d51e730acb97d048a32b3af09ae19da31",
+      "from": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "to": "0xcec87469d3b8ce6db33bc525c0383afa94fcc7ec",
+      "amount_ccc": "1",
+      "timestamp": 1792974371
+    },
+    {
+      "hash": "0x53ebbcc6ea3cc2cb46fbac3d0e0a59e9a7c100e372af0f3c8561ecccc12ba393",
+      "from": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "to": "0x5a52e96bacdabb82fd05763e25335261b270efcb",
+      "amount_ccc": "5000000",
+      "timestamp": 1792706591
+    },
+    {
+      "hash": "0x899b29589d61a42643053625a93912a393953800e709d6bcf15fc7704a6de030",
+      "from": "0x16f43e9d671077540b84725680544a2a5a0da3dd",
+      "to": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "amount_ccc": "598999000",
+      "timestamp": 1792191719
+    },
+    {
+      "hash": "0xa163aad33c63021922b3ecfde24d48f082ec2eda79bcd0510eb5adea3c4567b5",
+      "from": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "to": "0x16f43e9d671077540b84725680544a2a5a0da3dd",
+      "amount_ccc": "598999000",
+      "timestamp": 1791744695
+    },
+    {
+      "hash": "0x55500b63ea2cd10d3b6be857dfdba982ba44b96cc8e09904da745d053433aa38",
+      "from": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "to": "0x4090688d8e59ab2eb7b0662f554d054827b7e2ba",
+      "amount_ccc": "1000000",
+      "timestamp": 1791231779
+    },
+    {
+      "hash": "0x4a0148cb0498ad8f3a50ee5f3de3cf2c54c0b7f4724cc5ad391d20683797e43e",
+      "from": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "to": "0xc490e2a76c25a9e1a655e2c61f9c728ef4816ea3",
+      "amount_ccc": "1000",
+      "timestamp": 1791228215
+    },
+    {
+      "hash": "0x5e6cb1703f1a5d5e2a15df4ab4c4b95187dee9c380749542b467a95667457143",
+      "from": "0x0000000000000000000000000000000000000000",
+      "to": "0xb20718f5b2c16da77cefd6c1662bb1a1498948ed",
+      "amount_ccc": "600000000",
+      "timestamp": 1791214283
+    }
+  ]
+}
