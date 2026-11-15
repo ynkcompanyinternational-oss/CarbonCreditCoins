@@ -1,10 +1,4 @@
 .env
-.env.*
-*.pem
-*.key
-*.keystore
-*.secret
-node_modules/
 __pycache__/
-*.bak
-*.log
+*.pyc
+.DS_Store

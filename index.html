@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="Carbon Credit Coins (CCC). Sustentabilidade, transparência e responsabilidade no mercado de ativos ambientais. Projeto YNK & Co.">
+<title>Carbon Credit Coins | CCC</title>
+
+<style>
+:root {
+  --gold-dark: #6b461e;
+  --gold: #b88a46;
+  --gold-light: #eacb87;
+  --black: #050505;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--black);
+  color: var(--gold-light);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.screen {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+}
+
+#home {
+  background: var(--black) url("assets/capa.jpg")
+              center center / contain no-repeat;
+}
+
+.menu-trigger {
+  position: absolute;
+  bottom: 7.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 54px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+.menu-trigger span {
+  display: block;
+  width: 38px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--gold-dark),
+    var(--gold),
+    var(--gold-light),
+    var(--gold)
+  );
+  box-shadow: 0 1px 5px #000;
+}
+
+.menu-trigger:hover span {
+  filter: brightness(1.12);
+}
+
+.menu-trigger:focus-visible,
+.back:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 5px;
+}
+
+#information {
+  background: var(--black) url("assets/lamina.jpg")
+              center center / cover fixed no-repeat;
+  padding: 30px 20px 70px;
+}
+
+.content {
+  width: min(100%, 780px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.back {
+  display: inline-flex;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px;
+  margin: 0 0 25px;
+}
+
+.back img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
+h1 {
+  color: var(--gold-light);
+  font-size: clamp(25px, 4vw, 38px);
+  font-weight: normal;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.panel {
+  margin-top: 35px;
+  padding: 28px 20px;
+  background: rgba(0,0,0,.74);
+  border: 1px solid rgba(184,138,70,.35);
+}
+
+.panel p {
+  font-size: 15px;
+  line-height: 1.9;
+  letter-spacing: .3px;
+}
+
+@media(max-aspect-ratio:3/4) {
+  #home {
+    background-size: contain;
+    background-position: center center;
+  }
+
+  .menu-trigger {
+    bottom: 7.5%;
+  }
+
+  #information {
+    background-attachment: scroll;
+  }
+}
+</style>
+
+<style id="ccc-home-bars-refine">
+#home .menu-trigger {
+  width:46px !important;
+  height:38px !important;
+  gap:4px !important;
+}
+
+#home .menu-trigger span {
+  width:25px !important;
+  height:2px !important;
+}
+</style>
+
+
+<script id="ccc-scroll-start">
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+window.addEventListener("pageshow", () => {
+  if (!location.hash) {
+    requestAnimationFrame(() => window.scrollTo(0, 0));
+  }
+});
+</script>
+</head>
+
+<body>
+
+<main id="home" class="screen">
+  <button class="menu-trigger"
+          id="open-menu"
+          type="button"
+          aria-label="Abrir informações"
+          aria-controls="information">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</main>
+
+<main id="information" class="screen" hidden>
+  <div class="content">
+
+    <button class="back"
+            id="go-home"
+            type="button"
+            aria-label="Voltar à página inicial">
+      <img src="assets/logo.png" alt="CCC">
+    </button>
+
+    <h1>CARBON CREDIT COINS</h1>
+    <div class="subtitle">
+      CCC · YNK & Co.
+    </div>
+
+    <section class="panel">
+      <h2>Uma nova visão para os ativos ambientais</h2>
+      <p>
+        A Carbon Credit Coins apresenta uma proposta
+        voltada à sustentabilidade, transparência e
+        responsabilidade no mercado global de
+        créditos de carbono.
+      </p>
+
+      <p>
+        O projeto busca contribuir para a rastreabilidade
+        de ativos ambientais e para a redução de riscos
+        associados à duplicidade de registros e
+        negociações.
+      </p>
+
+      <p>
+        Carbon Credit Coins (CCC)<br>
+        Rede Ethereum<br>
+        Oferta fixa declarada: 600.000.000 CCC
+      </p>
+      <p>
+        <strong>Contrato informado — Ethereum</strong><br>
+        <a href="https://etherscan.io/address/0x9640Bb4eb644d05Ed5E928504cb69D00823BF7c5"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="color:var(--gold-light);overflow-wrap:anywhere">
+          0x9640Bb4eb644d05Ed5E928504cb69D00823BF7c5
+        </a><br>
+        <small>Verificação on-chain pendente</small>
+      </p>
+    </section>
+
+  </div>
+</main>
+
+<script>
+const home = document.getElementById("home");
+const information = document.getElementById("information");
+
+document.getElementById("open-menu")
+  .addEventListener("click", () => {
+    home.hidden = true;
+    information.hidden = false;
+    window.scrollTo(0,0);
+  });
+
+document.getElementById("go-home")
+  .addEventListener("click", () => {
+    information.hidden = true;
+    home.hidden = false;
+    window.scrollTo(0,0);
+  });
+</script>
+
+
+<script id="CCC-MENU-CONNECTION">
+document.addEventListener("click", function(event) {
+  const button = event.target.closest(
+    "#open-menu, .menu-trigger"
+  );
+
+  if (!button) return;
+
+  event.preventDefault();
+  event.stopImmediatePropagation();
+
+  window.location.href = "menu.html";
+}, true);
+</script>
+
+</body>
+</html>
